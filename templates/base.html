@@ -1,1 +1,25 @@
-{% extends "javascript.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content=""width="device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSs -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <title>Title</title>
+</head>
+
+<body>
+{% block navbar %}{% endblock %}
+{% block content %}{% endblock %}
+
+
+<!-- Javascript block.  All pages require these.  Includes option for customJS to be added -->
+{% block javascript %}
+    <script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+    {% block customJS %}{% endblock %}
+{% endblock %}
+</body>
+</html>

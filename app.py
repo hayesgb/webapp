@@ -5,7 +5,7 @@ app = Quart(__name__)
 
 @app.route('/')
 async def index():
-    return await render_template('base.html')
+    return await render_template('index.html')
 
 @app.websocket('/ws')
 async def ws():
