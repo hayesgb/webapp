@@ -90,8 +90,13 @@ async def login():
         else:
             session['logged_in'] = True
             await flash('You were logged in')
-            return redirect(url_for('posts'))
-    return await render_template('login.html', error=error)
+            return redirect(url_for('blog_editor'))
+    return await render_template('login.html', error=error, data=data)
+
+
+@app.route("/random-thoughts/editor", methods=["GET", "POST"])
+async def blog_editor():
+    return await render_template('blog_editor.html', data=data)
 
 @app.route("/logout")
 async def logout():

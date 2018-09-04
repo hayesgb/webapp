@@ -10,8 +10,7 @@
     <title>Title</title>
 </head>
 
-<body>
-{#{% block blogging_setup %}{% endblock %}#}
+
 {% block navbar %}{% endblock %}
 {% block content %}{% endblock %}
 
@@ -22,5 +21,4 @@
     <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
     {% block customJS %}{% endblock %}
 {% endblock %}
-</body>
 </html>

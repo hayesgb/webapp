@@ -1,5 +1,7 @@
-<!doctype html>
-<title>Blog</title>
+{% extends "navbar.html" %}
+
+{% block content %}
+<body style="padding-top: 60px"></body>
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='blog.css') }}">
 <h1><a href="{{ url_for('posts') }}">Blog</a></h1>
 <nav>
@@ -12,7 +14,5 @@
 {% for message in get_flashed_messages() %}
   <div class="flash">{{ message }}</div>
 {% endfor %}
-<div class="content">
-  {% block content %}
-  {% endblock %}
-</div>
+</body>
+{% endblock %}
